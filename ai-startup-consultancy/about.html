@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | test-yan-2 - AI Startup Consultancy</title>
+    <meta name="description" content="The story and mission behind test-yan-2, a premier AI startup consultancy helping founders move from shiny demos to scalable AI businesses.">
+    
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    </style>
+
+    <style>
+        :root {
+            /* Brand Colors from Logo */
+            --color-primary: #000000;
+            --color-primary-dark: #1a1a1a;
+            --color-accent: #ffffff;
+            
+            /* Theme Colors */
+            --color-background: #ffffff;
+            --color-surface: #f9f9f9;
+            --color-text: #111111;
+            --color-text-muted: #666666;
+            --color-border: #e5e5e5;
+            
+            /* Typography & Spacing */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --section-padding: 100px 5%;
+            --container-max-width: 1200px;
+            --border-radius: 8px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .nav-cta {
+            background-color: var(--color-primary);
+            color: var(--color-accent);
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .about-hero {
+            padding: 160px 5% 100px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero p {
+            font-size: 1.35rem;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            padding: var(--section-padding);
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+        }
+
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .section-tag {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Philosophy & Values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            padding: 40px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-color: transparent;
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Our Story */
+        .story-section {
+            background-color: var(--color-surface);
+        }
+
+        /* Stats Section */
+        .stats-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 60px 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            margin: 40px 0;
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Call to Action */
+        .cta-box {
+            background-color: var(--color-primary);
+            color: var(--color-accent);
+            padding: 80px 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+        }
+
+        .cta-box p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn-white {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            padding: 16px 32px;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 5% 40px;
+            border-top: 1px solid var(--color-border);
+            background: #ffffff;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            margin-top: 20px;
+        }
+
+        .footer-links h5 {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--color-text-muted);
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover svg {
+            fill: var(--color-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .split-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-bar {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB1UlEQVR4AeyVMS9EQRDHLzqfQOELqBV8AQ2FCBIKCo1GR0lJSUWjpSBBoaBRakiodRp6Fa3/72XnWW7n7Tvvkksud5n/zt7M7O7/zcy+N9Tq8W9AYJCBvsvAsC4VkKon3czAho78FI6F2tINAuM67U04FJAVDaNCLWlCgENudMqTwFyqlKtylpk0ITCnvaeFlEzIOCNkpQmBI+3+Lnhy4TliexMC7DPL4IDbsO34SvN/CNDtD2GHZ+lbwZNdz2H2TgjE3R7XeME2c/SJYy/MdQiQylS3W42/tNOB4EnltcwR4HBeLqlux2c13vJOD/a7oNtUjgBPd9q26sdAjSGCZZnBwZjsyWuZI6B1rVWGClwG37n0i+CJleyXv4oA3W7BOzZJaMpDg+KaYnBApqxkZUiKAJvZu30/RO5JUw6ppFwHKy+muiUrlsQEYPi32zcVZe/5Rc09IWYpOOuWrAg3AqTG63b7sEDusViVHs4ic92StYzAR7T475SXDmXBPs9QgU5LVhLIfVjuw6G5GndSsqLJLQPsP6mBu5zCmnzUWaq1riEVY7YR+RFKZraUfiUoJsDTcZc94GcNt8GLwc4HijjAfw8QLEtAcE8QZ2BAoD8zkHuqbwAAAP//xFy1BwAAAAZJREFUAwC2gVZBg7aASwAAAABJRU5ErkJggg==" alt="test-yan-2 logo" style="height:40px;object-fit:contain">
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" style="color: var(--color-primary); font-weight: 700;">About</a>
+            <a href="auth.html">Sign In</a>
+            <a href="mailto:hello@test.test" class="nav-cta">Work With Us</a>
+        </div>
+    </nav>
+
+    <header class="about-hero">
+        <span class="section-tag">Our Mission</span>
+        <h1>We help founders build AI businesses, not just AI demos.</h1>
+        <p>In a world of hype and generic playbooks, test-yan-2 provides the strategic and technical depth required to build repeatable, scalable AI products.</p>
+    </header>
+
+    <section class="story-section">
+        <div class="container split-section">
+            <div class="story-content">
+                <span class="section-tag">Why We Exist</span>
+                <h2>The Gap in AI Advisory</h2>
+                <p>We saw a recurring pattern: founders were being sold generic startup playbooks that ignored the unique technical and data challenges of the AI era. Pretty decks were leading to unworkable roadmaps.</p>
+                <p>Founders were receiving high-level advice but little practical help on pricing, packaging, and technical delivery. This friction slowed revenue and killed repeatability.</p>
+                <p><strong>test-yan-2</strong> was founded to be the fractional partner that combines GTM strategy with deep AI technical nuance. We don't just point the way; we build the playbooks that make growth possible.</p>
+            </div>
+            <div class="story-stats">
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <h4>2025</h4>
+                        <p>Founded</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>15+</h4>
+                        <p>AI Verticals</p>
+                    </div>
+                </div>
+                <div class="value-card" style="background: white;">
+                    <h3>"Most advisors talk about 'Product-Market Fit.' We talk about 'Data-Infrastructure-Market Fit.' That's the difference."</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
+                <span class="section-tag">Our Philosophy</span>
+                <h2>How We Approach AI Growth</h2>
+                <p>Building an AI startup is fundamentally different from building traditional SaaS. We focus on the three pillars that matter most in the current landscape.</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <span class="section-tag">Pillar 01</span>
+                    <h3>Technical Nuance</h3>
+                    <p>We help you navigate LLM selection, data strategy, and build-vs-buy decisions early, ensuring you don't scale on a foundation that collapses under complexity.</p>
+                </div>
+                <div class="value-card">
+                    <span class="section-tag">Pillar 02</span>
+                    <h3>Repeatable GTM</h3>
+                    <p>Moving from experiment to sales requires precise positioning and pricing. We help you define your ICP and move beyond seat-based models to capture AI value.</p>
+                </div>
+                <div class="value-card">
+                    <span class="section-tag">Pillar 03</span>
+                    <h3>Operational Velocity</h3>
+                    <p>Growth depends on delivery. We provide the playbooks for scaling your team and your infrastructure so you can grow without everything depending on you personally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--color-surface);">
+        <div class="container split-section">
+            <div class="expertise-image">
+                <div style="background: var(--color-primary); height: 400px; width: 100%; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-weight: 800; font-size: 1.5rem;">STRATEGY × EXECUTION</span>
+                </div>
+            </div>
+            <div class="expertise-content">
+                <span class="section-tag">Expertise</span>
+                <h2>For Founders & CTOs</h2>
+                <p>Whether you are at the idea stage narrowing down a wedge, or a post-PMF startup scaling outbound, we act as your strategic advisor.</p>
+                <ul style="list-style: none; margin-top: 20px;">
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 10px;">
+                        <span style="color: var(--color-primary); font-weight: bold;">✓</span>
+                        <span><strong>Idea Stage:</strong> Narrowing ICP and problem-solution fit.</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 10px;">
+                        <span style="color: var(--color-primary); font-weight: bold;">✓</span>
+                        <span><strong>Growth Stage:</strong> Pricing strategy and packaging for AI SaaS.</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 10px;">
+                        <span style="color: var(--color-primary); font-weight: bold;">✓</span>
+                        <span><strong>Scaling Stage:</strong> Building a repeatable sales motion and GTM playbook.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="cta-box">
+            <h2>Ready to scale your AI product?</h2>
+            <p>Our engagements are high-touch, technical, and focused entirely on your growth. We offer custom pricing tailored to your stage and goals.</p>
+            <a href="mailto:consult@test.test" class="cta-btn-white">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB1UlEQVR4AeyVMS9EQRDHLzqfQOELqBV8AQ2FCBIKCo1GR0lJSUWjpSBBoaBRakiodRp6Fa3/72XnWW7n7Tvvkksud5n/zt7M7O7/zcy+N9Tq8W9AYJCBvsvAsC4VkKon3czAho78FI6F2tINAuM67U04FJAVDaNCLWlCgENudMqTwFyqlKtylpk0ITCnvaeFlEzIOCNkpQmBI+3+Lnhy4TliexMC7DPL4IDbsO34SvN/CNDtD2GHZ+lbwZNdz2H2TgjE3R7XeME2c/SJYy/MdQiQylS3W42/tNOB4EnltcwR4HBeLqlux2c13vJOD/a7oNtUjgBPd9q26sdAjSGCZZnBwZjsyWuZI6B1rVWGClwG37n0i+CJleyXv4oA3W7BOzZJaMpDg+KaYnBApqxkZUiKAJvZu30/RO5JUw6ppFwHKy+muiUrlsQEYPi32zcVZe/5Rc09IWYpOOuWrAg3AqTG63b7sEDusViVHs4ic92StYzAR7T475SXDmXBPs9QgU5LVhLIfVjuw6G5GndSsqLJLQPsP6mBu5zCmnzUWaq1riEVY7YR+RFKZraUfiUoJsDTcZc94GcNt8GLwc4HijjAfw8QLEtAcE8QZ2BAoD8zkHuqbwAAAP//xFy1BwAAAAZJREFUAwC2gVZBg7aASwAAAABJRU5ErkJggg==" alt="test-yan-2 logo" style="height:32px;object-fit:contain">
+                    <p>Fractional AI Startup Consultancy for serious founders, CTOs, and venture studios.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="auth.html">Sign In</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><a href="mailto:hello@test.test">hello@test.test</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">X (Twitter)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="font-size: 0.85rem;">© 2026 test-yan-2. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#">
+                        <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                    </a>
+                    <a href="#">
+                        <svg viewBox="0 0 24 24"><path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
